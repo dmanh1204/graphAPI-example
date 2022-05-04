@@ -1,7 +1,8 @@
 {
   "ropsten": {
     "MyToken": {
-      "address": "0xEe794D2739F869df29632b2DA9f7F29C4f96FE9A"
+      "address": "0xEe794D2739F869df29632b2DA9f7F29C4f96FE9A",
+      "startBlock": 12235387
     }
   }
 }

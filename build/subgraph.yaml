@@ -1,0 +1,26 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MyToken
+    network: ropsten
+    source:
+      address: "0xEe794D2739F869df29632b2DA9f7F29C4f96FE9A"
+      abi: MyToken
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - Transfer
+      abis:
+        - name: MyToken
+          file: MyToken/abis/MyToken.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: MyToken/MyToken.wasm
